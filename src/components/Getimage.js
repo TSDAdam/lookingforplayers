@@ -9,10 +9,7 @@ var imgUrl = fetch(url)
   });
 
 var Getimage = () => {
-  var url = imgUrl.then(function (result) {
-    return result;
-  });
-
+  var url = imgUrl;
   console.log(url);
   return <img src={url} alt="image" />;
 };

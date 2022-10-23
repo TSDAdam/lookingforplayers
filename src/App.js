@@ -1,9 +1,10 @@
-import GetBGGdata from "./components/GetBGGdata";
+import Getimage from "./components/Getimage";
 
 function App() {
   return (
     <div className="App">
-      <GetBGGdata />
+      <Getimage />
+      <h1>Hi</h1>
     </div>
   );
 }

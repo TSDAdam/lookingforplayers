@@ -1,10 +1,11 @@
 import Getimage from "./components/Getimage";
+import Gameform from "./components/Gameform";
 
 function App() {
   return (
     <div className="App">
       <Getimage />
-      <h1>Hi</h1>
+      <Gameform />
     </div>
   );
 }

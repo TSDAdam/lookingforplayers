@@ -1,8 +1,24 @@
 import React, { useRef } from "react";
-import Searchforgame from "./Searchforgame";
 
 function Gameform(gameid) {
   const inputRef = useRef(null);
+  const [gamenames, setGamenames] = React.useState([]);
+
+  function Searchforgame(gamename) {
+    var url =
+      "https://boardgamegeek.com/xmlapi2/search?query=" +
+      gamename +
+      "&type=boardgame";
+
+    console.log(url);
+    fetch(url)
+      .then((response) => response.text())
+      .then((data) => {
+        let parser = new DOMParser(),
+          xmlDoc = parser.parseFromString(data, "text/xml");
+        setGamenames(xmlDoc.getElementsByTagName("name"));
+      });
+  }
 
   function handleClick() {
     console.log(inputRef.current.value);
@@ -22,3 +38,7 @@ function Gameform(gameid) {
 }
 
 export default Gameform;
+
+/*      {gamenames.map((gamename) => (
+          <div>{gamename.name}</div>
+        ))}  */

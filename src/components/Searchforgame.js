@@ -15,7 +15,7 @@ function Searchforgame(gamename) {
         xmlDoc = parser.parseFromString(data, "text/xml");
       setGamenames(xmlDoc.getElementsByTagName("name"));
     });
-  return <h1>gamenames</h1>;
+  return <h1>{gamenames}</h1>;
 }
 
 export default Searchforgame;

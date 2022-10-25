@@ -5,6 +5,7 @@ function Gameform(gameid) {
   const inputRef = useRef(null);
 
   function handleClick() {
+    console.log(inputRef.current.value);
     Searchforgame(inputRef.current.value);
   }
 
